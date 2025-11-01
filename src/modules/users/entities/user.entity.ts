@@ -32,14 +32,14 @@ export class User {
    * @Exclude() prevents password from being included in API responses
    * Even when User entity is returned, password won't be exposed
    */
-  @Column()
+  @Column({ type: 'varchar', nullable: true })
   @Exclude()
   password: string;
 
-  @Column()
+  @Column({ nullable: true })
   firstName: string;
 
-  @Column()
+  @Column({ nullable: true })
   lastName: string;
 
   /**
